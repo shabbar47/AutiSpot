@@ -1,0 +1,86 @@
+{% extends 'home_base.html' %}
+{% block head %}
+
+<head>
+	<!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
+	<title> Contact us </title>
+	<script>
+		function add_ct() {
+			var name = document.getElementById("name1").value;
+			var email = document.getElementById("email_ct1").value;
+			var mobile = document.getElementById("mobile1").value;
+			var message = document.getElementById("message1").value;
+			var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+			var reg1 = /^[A-Za-z][A-Za-z ]+$/;
+			var reg2 = /^[0-9]+$/;
+			if (name == '') {
+				document.getElementById("msg").innerHTML = "Please Enter Name"
+				$('#myModal11').modal('show');
+			}
+			else if (!name.match(reg1)) {
+				document.getElementById("msg").innerHTML = "Only Alphabetic allow and Space does not allow"
+				$('#myModal11').modal('show');
+			}
+			else if (email == '') {
+				document.getElementById("msg").innerHTML = "Please Enter EmailID"
+				$('#myModal11').modal('show');
+			}
+			else if (reg.test(email) == false) {
+				document.getElementById("msg").innerHTML = "Please Enter valid EmailID"
+				$('#myModal11').modal('show');
+			}
+			else if (mobile == '') {
+				document.getElementById("msg").innerHTML = "Please Enter Mobile No"
+				$('#myModal11').modal('show');
+			}
+			else if (!mobile.match(reg2)) {
+				document.getElementById("msg").innerHTML = "Only Numeric allow and Space does not allow"
+				$('#myModal11').modal('show');
+			}
+			else if (mobile.length != 10) {
+				document.getElementById("msg").innerHTML = "Mobile No must be of 10 digit"
+				$('#myModal11').modal('show');
+			}
+			else if (message == '') {
+				document.getElementById("msg").innerHTML = "Please Enter Message"
+				$('#myModal11').modal('show');
+			}
+			else {
+				alert("Data added successfully")
+				document.form1.submit();
+			}
+		}
+	</script>
+	{% endblock %}
+</head>
+{% block body %}
+<!-- start-->
+<br />
+<div>
+	<div class="container">
+		<div>
+			<div>
+				<h3 class="tittle">Contact</h3>
+				<div class="border"></div>
+			</div>
+		</div>
+		<div class="contact-form">
+			<h4 style="color:#f36371">Contact Form</h4><br />
+			<form name="form1" action="{{ url_for('contact_us_1') }}" method="POST" enctype="multipart/form-data">
+
+				<input class="col-1" type="text" placeholder="Name" id="name1" name="name">
+				<input type="email" placeholder="Email" id="email_ct1" name="email_ct">
+				<input type="text" placeholder="Mobile" id="mobile1" name="mobile">
+				<textarea placeholder="Message" id="message1" name="message"></textarea>
+				<!-- <div class="g-recaptcha" data-sitekey="6LdvCjAUAAAAAI0AbUHdhWJ0x64bESY0qtg4Faxn"></div>  -->
+				<br /><input type="button" class="btn-primary btn" value="Submit" onclick="add_ct()">
+
+			</form>
+		</div>
+
+	</div>
+
+</div>
+<!-- end -->
+<br />
+{% endblock %}

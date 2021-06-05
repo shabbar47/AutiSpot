@@ -1,0 +1,205 @@
+{% extends 'home_base.html' %}
+{% block head %}
+<head>
+<script>
+function fun(){
+	
+	var fname=document.getElementById("fname1")
+	var mname=document.getElementById("mname1")
+	var lname=document.getElementById("lname1")
+	var email=document.getElementById("email1")
+	var mobile=document.getElementById("mobile1")
+	var date=document.getElementById("date1")
+	var current_pos=document.getElementById("current_pos")
+	var college=document.getElementById("college")
+	var password=document.getElementById("pass1")
+	var confirm=document.getElementById("cpass1")
+	var file=document.getElementById("file1")
+	var country_id=document.getElementById('countrty')
+	x=file.value.split(".")
+	 var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+	if(fname.value=='')
+	{
+		document.getElementById("msg").innerHTML="Please Enter FirstName"
+		$('#myModal11').modal('show');
+	}
+	else if(lname.value=='')
+	{
+		document.getElementById("msg").innerHTML="Please Enter LastName"
+		$('#myModal11').modal('show');
+	}
+	else if(email.value=='')
+	{
+		document.getElementById("msg").innerHTML="Please Enter EmailId"
+		$('#myModal11').modal('show');
+	}
+	else if(reg.test(email.value) == false)
+	{
+		document.getElementById("msg").innerHTML="Please Enter Valid EmailID"
+		$('#myModal11').modal('show');
+	}
+	else if(mobile.value!='' && mobile.value.length!=10)
+	{
+		document.getElementById("msg").innerHTML="Mobile number must be of 10 digit"
+		$('#myModal11').modal('show');
+	}
+	else if(password.value=='')
+	{
+		document.getElementById("msg").innerHTML="Please Enter Password"
+		$('#myModal11').modal('show');
+	}
+	else if(confirm.value=='')
+	{
+		document.getElementById("msg").innerHTML="Please Enter Confirm Password"
+		$('#myModal11').modal('show');
+	}
+	else if(password.value!=confirm.value)
+	{
+		document.getElementById("msg").innerHTML="Password and Confirm Password must be Same"
+		$('#myModal11').modal('show');
+	}
+	else if(date.value=='')
+	{
+		document.getElementById("msg").innerHTML="Please Enter D.O.B"
+		$('#myModal11').modal('show');	
+	}
+	else if(current_pos.value=='')
+	{
+		document.getElementById("msg").innerHTML="Please Enter Current Position"
+		$('#myModal11').modal('show');	
+	}
+	else if(country_id.value==0)
+	{
+		document.getElementById("msg").innerHTML="Please select a country"
+		$('#myModal11').modal('show');
+	}
+	else if(x[1]!='png' && x[1]!='jpeg' && x[1]!='jpg' && x[1]!='bmp' && file.value!='')
+	{
+		document.getElementById("msg").innerHTML="Image must be in form of jpg/jpeg/png/bmp"
+		$('#myModal11').modal('show');
+	}
+	else{
+		 $.post("/validate_email_user",
+        {
+		  email:email.value,
+        },
+		function(data,status){
+			if(data=="wrong")
+			{
+				document.getElementById("msg").innerHTML="EmailID is already exist."
+				$('#myModal11').modal('show');
+			}
+			else
+			{
+				document.form1.submit();
+			}
+        }
+        );		
+	}
+}
+</script>
+{% endblock %}
+</head>
+{% block body %}
+<br />
+<!-- start-->
+<div class="contac1t">
+	<div class="container">
+		<div class="w3-heading-grid">
+			<div>
+				<h3 class="tittle">Sign Up</h3>
+				<div class="border"></div>
+			</div>
+		</div>
+		
+		<form action="{{ url_for('user_sign_up_1') }}" method="POST" enctype="multipart/form-data" name="form1">
+			<p style="color:red">* - Required Fields... </p>
+			<div class="vali-form">
+
+				<div class="col-md-4 form-group group-mail">
+					<label>Firstname <strong style="color:red">*</strong></label>
+					<input type="text" class="form-control" placeholder="FirstName" id="fname1" name="fname">
+				</div>
+				<div class="col-md-4 form-group group-mail">
+					<label>Middlename</label>
+					<input type="text" class="form-control" placeholder="MiddleName" id="mname1" name="mname">
+				</div>
+				<div class="col-md-4 form-group group-mail">
+					<label>Lastname <strong style="color:red">*</strong></label>
+					<input type="text" class="form-control" placeholder="LastName" id="lname1" name="lname">
+				</div>
+
+			</div>
+			<div class="col-md-8 form-group group-mail">
+				<label>Email <strong style="color:red">*</strong></label>
+				<input type="text" class="form-control" placeholder="Email" id="email1" name="email">
+			</div>
+			<div class="col-md-8 form-group group-mail">
+				<label>Mobile No</label>
+				<input type="number" class="form-control" placeholder="Mobile No" id="mobile1" name="mobile">
+			</div>
+			<div class="col-md-8 form-group group-mail">
+				<label>Password <strong style="color:red">*</strong></label>
+				<input type="password" class="form-control" placeholder="Password" id="pass1" name="password">
+			</div>
+			<div class="col-md-8 form-group group-mail">
+				<label>Confirm password <strong style="color:red">*</strong></label>
+				<input type="password" class="form-control" placeholder="Confirm password" id="cpass1" name="cpassword">
+			</div>
+			<div class="col-md-8 form-group ">
+				<label>Gender</label> &nbsp;&nbsp;
+				<input type="radio" name="gn" value="Male" checked>Male</input>
+				&nbsp;&nbsp;<input type="radio" value="Female" name="gn">Female</input>
+			</div>
+			<div class="col-md-8 form-group group-mail">
+				<label class="control-label">Date Of Birth<strong style="color:red">*</strong></label>
+				<input type="date" class="form-control" class="form-control1 ng-invalid ng-invalid-required" ng-model="model.date"
+				 name="date" id="date1">
+			</div>
+			<div class="col-md-8 form-group group-mail">
+				<label class="control-label">Current Position<strong style="color:red">*</strong></label>
+				<input type="text" class="form-control" placeholder="Your current position in your Company/Intitute" id="current_pos"
+				 name="cur_pos">
+			</div>
+			<div class="col-md-8 form-group group-mail">
+				<label class="control-label">College</label>
+				<input type="text" class="form-control" placeholder="College name" id="college" name="collegename">
+			</div>
+			<div class="col-md-8 form-group group-mail">
+				<label class="control-label">Country<strong style="color:red">*</strong></label>
+				<select name="country" id="countrty" class="form-control">
+						<option value="0">Select Country</option>
+					{% for i in country %}
+					<option value="{{i['id']}}">{{i['name']}}</option>
+					{% endfor %}
+				</select>
+			</div>
+			<div class="col-md-8 form-group group-mail">
+				<label class="control-label">Profile Pic</label>
+				<input type="file" class="form-control" name="file" id="file1">
+			</div>
+			<div class="col-md-12 form-group">
+				<button type="button" class="btn btn-primary" onclick="fun()">Submit</button>
+				<button type="reset" class="btn btn-default">Reset</button>
+			</div>
+			<div class="clearfix"> </div>
+		</form>
+	</div>
+</div>
+<!-- end -->
+<div class="modal fade" id="myModal11" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-body">
+				<p id="msg"></p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+
+	</div>
+</div>
+ {% endblock %}

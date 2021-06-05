@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>AutiSpot</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='assets1/img/favicon_new.png') }}" rel="icon">
+  <link href="{{ url_for('static', filename='assets1/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename='assets1/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets1/vendor/icofont/icofont.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets1/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets1/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets1/vendor/venobox/venobox.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets1/vendor/owl.carousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets1/vendor/aos/aos.css') }}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('static', filename='assets1/css/style.css') }}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a href="/"><img class="logo" src="{{ url_for('static', filename='assets1/img/apple-touch-icon.png') }}" > AutiSpot</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo mr-auto"><img src="assets1/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/" style="color: #6C82D8">HOME</a></li>
+          <li class="drop-down"><a href="#" style="color: #6C82D8">DETECTION</a>
+            <ul>
+              <li><a href="/detection" style="color: #6C82D8">Machine Learning Algorithms</a></li>
+              <li><a href="/detection" style="color: #6C82D8">Convolutional Neural Networks</a></li>
+            </ul>
+          </li>
+          <li><a href="/users" style="color: #6C82D8">PERSONALIZED COMM. BOARDS</a></li>
+          <li><a href="/todos" style="color: #6C82D8">AUTI-DO</a></li>
+          <li><a href="/blogs" style="color: #6C82D8">ENGAGE</a></li>
+          <li><a href="#team" style="color: #6C82D8">TEAM</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+  
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+      <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-9 text-center">
+          <h2 style="font-size: 30px;color: whitesmoke;" ><b>AUTISM SPECTRUM DISORDER (ASD) DIAGNOSIS & REINFORCEMENT</b></h2>
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="#car" class="btn-get-started scrollto">Get Started</a>
+      </div>
+
+      <div class="row icon-boxes" id="car">
+        <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
+          <div class="icon-box">
+            <div class="icon"><i class="ri-stack-line"></i></div>
+            <h4 class="title"><a href="/detection">Prognosis using ML</a></h4>
+            <p class="description">Diagnosis and Prediction of toddlers and adults to determine if they fall under the Autism spectrum using various machine learning algorithms.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="300">
+          <div class="icon-box">
+            <div class="icon"><i class="ri-computer-line"></i></div>
+            <h4 class="title"><a href="/detection">Diagnosis using CNN</a></h4>
+            <p class="description">Identifying & Prognosis of toddlers and adults to determine if they fall under the Autism spectrum using Deep learning & Neural Networks via Tensorflow & Keras.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="400">
+          <div class="icon-box">
+            <div class="icon"><i class="ri-command-line"></i></div>
+            <h4 class="title"><a href="/users">Comm. Boards</a></h4>
+            <p class="description">A Communication assistance module that lets users tap on images, hear sounds and words pronounced aloud, 
+              and develop personalized communication boards that can help them verbally communicate their needs and thoughts.</p>
+          </div>
+        </div>
+        </div>
+        <div class="row icon-boxes">
+        <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="500">
+          <div class="icon-box">
+            <div class="icon"><i class="ri-todo-line"></i></div>
+            <h4 class="title"><a href="/todos">Auti-DO</a></h4>
+            <p class="description">Intuitive User Interface aids in devising visual schedules according to user preferences to assist the autistic community in their everyday routines 
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="500">
+          <div class="icon-box">
+            <div class="icon"><i class="ri-gallery-fill"></i></div>
+            <h4 class="title"><a href="/blogs">Engage</a></h4>
+            <p class="description">A social platform to share their thoughts and get connected with like minded ones. 
+              Interface to display talent and appreciate others.</p>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Video Section ======= -->
+    <section id="about-video" class="about-video">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-6 video-box align-self-baseline" data-aos="fade-right" data-aos-delay="100">
+            <br><br>
+            <img src="{{ url_for('static', filename='assets1/img/autigirl.png') }}" class="img-fluid" alt="">
+            <a href="https://www.youtube.com/watch?v=d4G0HTIUBlI" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+          </div>
+
+          <div class="col-lg-6 pt-3 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
+            <h3>A Glimpse of Autistic World:</h3>
+            <p class="font-italic">
+              Autism Spectrum Disorder (ASD) is a neuro-developmental disorder and early diagnosis
+               has a great deal of importance in terms of controlling the disease.
+
+            </p>
+            <ul>
+              <li><i class="bx bx-check-double"></i> As per records, the cost of caring for Americans with autism had reached $268 billion in 2015 and would rise to $461 billion by 2025 in the absence of more effective interventions.
+              </li>
+              <li><i class="bx bx-check-double"></i> Social anxiety is reported in 22% of adults with autism, and many of these individuals are finding solace on social media platforms, but find it difficult to
+                 engage themselves and showcase their talent to the world.</li>
+              <li><i class="bx bx-check-double"></i> The increase in the number of ASD cases reveals an urgent need to 
+                develop easily applied behavioral, educational, and family therapies that may reduce symptoms and support development.
+              </li>
+              <li><i class="bx bx-check-double"></i> Detecting the type of autism from a preliminary symptom in its early stage is difficult, as the symptoms are based on the response to cognitive functions.
+                 However, if autism is not detected and treated between the ages of 20-60 months, the treatment at a later stage becomes difficult.</li>
+            </ul>
+          
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End About Video Section -->
+
+ <!-- ======= Frequently Asked Questions Section ======= -->
+ <section id="faq" class="faq section-bg">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq-list">
+      <ul>
+        <li data-aos="fade-up" data-aos-delay="300">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-1" class="collapse">How Do I determine if my child is autistic? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-1" class="collapse show" data-parent=".faq-list">
+            <p>
+              AutiSpot employs various machine learning algorithms backed with Neural Networks analysis to determine if a given person falls under ASD.
+              The platform also focuses on a person’s holistic well-being: physical, mental, emotional and behavioral health as well as educational goals and life skills.
+            </p>
+          </div>
+        </li>
+      
+
+        <li data-aos="fade-up" data-aos-delay="100">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-2" class="collapsed">Did I Cause My Child’s Autism? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-2" class="collapse" data-parent=".faq-list">
+            <p>
+              No. After getting an ASD diagnosis, this is the first question that many parents have—especially mothers. 
+              However, while there may be a genetic component to autism, there is no scientific evidence that anything that you did or did not do while your child was in utero or in his or her formative years caused the disorder. Please understand that feelings of anger, frustration, and guilt are perfectly normal after the initial diagnosis.
+               In many ways, you are experiencing a profound loss, and you should expect to grieve.
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="200">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-3" class="collapsed">Will My Child Ever Be Normal? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-3" class="collapse" data-parent=".faq-list">
+            <p>
+              There’s a saying in the autism community that normal is just a setting on your washing machine.
+               On one level, nobody has a normal child. All we really have is a range of what’s average when it comes to child development—but that’s not much comfort to a parent wondering about developmental delays, meltdowns, lack of language skills, and self-destructive or maladaptive behaviors. Of course, we get what parents are asking. They want to know about autism severity and the likelihood that their child will be able to interact with peers and establish relationships. And they want to hold out hope for a positive outcome. While every child with autism is different, with patience, treatment, and professional intervention,
+               even children who are on the more severe end of the autism spectrum can learn and develop positive social skills and other life skills.
+            </p>
+          </div>
+        </li>
+        <li data-aos="fade-up">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapsed" href="#faq-list-4">How prevalant is Autism? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-4" class="collapse" data-parent=".faq-list">
+            <p>
+              About 1 in 54 children has been identified with autism spectrum disorder (ASD) according to estimates from CDC’s Autism and Developmental Disabilities Monitoring (ADDM) Network.
+            </p>
+          </div>
+        </li>
+     
+
+      </ul>
+    </div>
+
+  </div>
+</section><!-- End Frequently Asked Questions Section -->
+
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Team</h2>
+          </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <div class="member-img">
+                <img src="{{ url_for('static', filename='assets1/img/profile.jpg') }} " class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://mobile.twitter.com/_Qasim_Ali"><i class="icofont-twitter"></i></a>
+                  <a href="mailto:qasimalifarooqui@gmail.com"><i class="icofont-email"></i></a>
+                  <a href="https://www.linkedin.com/in/qasim-ali-farooqui-80148b189/"><i class="icofont-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Qasim Ali Farooqui</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <div class="member-img">
+                <img src="{{ url_for('static', filename='assets1/img/profile.jpg') }} " class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://twitter.com/MohdAbd22971770?s=09"><i class="icofont-twitter"></i></a>
+                  <a href="mailto:abdul2021rahman@gmail.com"><i class="icofont-email"></i></a>
+                  <a href="https://www.linkedin.com/in/mohammed-abdul-rahman-0795b7194/"><i class="icofont-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Mohammed Abdul Rahman</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <div class="member-img">
+                <img src="{{ url_for('static', filename='assets1/img/profile.jpg') }} " class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://twitter.com/shabbar47"><i class="icofont-twitter"></i></a>
+                  <a href="mailto:shabbar47@gmail.com"><i class="icofont-email"></i></a>
+                  <a href="https://www.linkedin.com/in/shabbar-hussain-303b14193/"><i class="icofont-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Shabbar</h4>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+    
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="container d-md-flex py-4">
+
+      <div class="mr-md-auto text-center text-md-left">
+        <div class="copyright">
+          &copy; Copyright <strong><span>AutiSpot</span></strong>. All Rights Reserved
+        </div>
+      </div>
+      <div class="credits text-center text-md-right pt-3 pt-md-0">
+        Developed by <a href="#">MQS</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+
+  <script src="{{ url_for('static', filename='assets1/vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets1/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets1/vendor/jquery.easing/jquery.easing.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets1/vendor/php-email-form/validate.js') }}"></script>
+  <script src="{ url_for('static', filename='assets1/vendor/waypoints/jquery.waypoints.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets1/vendor/counterup/counterup.min.js') }}"></script>
+  <script src=" {{ url_for('static', filename='assets1/vendor/venobox/venobox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets1/vendor/owl.carousel/owl.carousel.min.js') }}"></script>
+  <script src=" {{ url_for('static', filename='assets1/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src=" {{ url_for('static', filename='assets1/vendor/aos/aos.js') }}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static', filename='assets1/js/main.js') }}"></script>
+
+</body>
+
+</html>
+
+
+
+   

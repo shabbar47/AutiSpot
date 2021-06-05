@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.min.css') }}">
+
+</head>
+<body>
+<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+    
+    <aside class="left-sidebar" data-sidebarbg="skin6" style="background-color: darkcyan; padding-top: 2px;">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar" style="background-color: darkcyan">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav" style="background-color: darkcyan">
+                    <ul id="sidebarnav" style="background-color: darkcyan">
+                        <!-- User Profile-->
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"
+                                aria-expanded="false">
+                                <h3 class="box-title mb-0" style="text-align:center;">AutiSpot</h3>
+                            </a>
+                        </li>
+                        <h3 class="box-title mb-0" style="text-align:center; color: #F7F9F9;">Frequent Todo's</h3>
+                    <form class="ui form" action="" method="post" style="background-color: darkcyan">
+                        <li class="sidebar-item pt-2">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                aria-expanded="false">
+                                <i aria-hidden="true"></i>
+                                <input style="background-color: transparent; border-color: transparent; color: #F7F9F9;"  type="text" name="title" class="form-control rounded" value="Morning" aria-label="Search" readonly 
+                                    aria-describedby="search-addon" />
+                                <button type="submit" class="btn btn-outline-primary btn-sm"> <i class="fa fa-plus" style="font-size: 12px; color: white; border-color: transparent;" aria-hidden="true"></i></button>
+
+                            </a>
+                        </li>
+                    </form>
+                    <form class="ui form" action="" method="post" style="background-color: darkcyan">
+                        <li class="sidebar-item pt-2">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                aria-expanded="false">
+                                <i aria-hidden="true"></i>
+                                <input style="background-color: transparent; border-color: transparent; color: #F7F9F9;" type="text" name="title" class="form-control rounded" value="Tooth-Brush" aria-label="Search" readonly 
+                                    aria-describedby="search-addon" />
+                                <button type="submit" class="btn btn-outline-primary btn-sm"> <i class="fa fa-plus"style="font-size: 12px; color: white; border-color: transparent;" aria-hidden="true"></i></button>
+
+                            </a>
+                        </li>
+                    </form>
+                    <form class="ui form" action="" method="post" style="background-color: darkcyan">
+                        <li class="sidebar-item pt-2">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                aria-expanded="false">
+                                <i aria-hidden="true"></i>
+                                <input style="background-color: transparent; border-color: transparent; color: #F7F9F9;" type="text" name="title" class="form-control rounded" value="Lunch" aria-label="Search" readonly 
+                                    aria-describedby="search-addon" />
+                                <button type="submit" class="btn btn-outline-primary btn-sm"> <i class="fa fa-plus"style="font-size: 12px; color: white; border-color: transparent;" aria-hidden="true"></i></button>
+
+                            </a>
+                        </li>
+                    </form> 
+                    <form class="ui form" action="" method="post" style="background-color: darkcyan">
+                        <li class="sidebar-item pt-2">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                aria-expanded="false">
+                                <i aria-hidden="true"></i>
+                                <input style="background-color: transparent; border-color: transparent; color: #F7F9F9;" type="text" name="title" class="form-control rounded" value="Dinner" aria-label="Search" readonly 
+                                    aria-describedby="search-addon" />
+                                <button type="submit" class="btn btn-outline-primary btn-sm" ><i class="fa fa-plus"style="font-size: 12px; color: white; border-color: transparent;" aria-hidden="true"></i></button>
+
+                            </a>
+                        </li>
+                </form>
+                    </ul>
+
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+    </aside>
+    <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb bg-white">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Dashboard</h4>
+                    </div>
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                        <div class="d-md-flex">
+                            <ol class="breadcrumb ms-auto">
+                                <li><a href="#" class="fw-normal">Dashboard</a></li>
+                            </ol>
+                            <a href="https://www.wrappixel.com/templates/ampleadmin/" target="_blank"
+                                class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Upgrade
+                                to Pro</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Three charts -->
+                <!-- ============================================================== -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="white-box analytics-info" style="background-color: #18B8C1;">
+                            <h3 class="box-title" style="color:white;">Total Todos</h3>
+                            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                                <li>
+                                    <div id="sparklinedash"><canvas width="67" height="30"
+                                            style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
+                                    </div>
+                                </li>
+
+                                <li class="ms-auto"><span class="counter text-white"><h3 id="report"  value="text" >{{ resultValue }}</h3></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="white-box analytics-info" style="background-color: #17B83F;">
+                            <h3 class="box-title" style="color:white;">Completed</h3>
+                            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                                <li>
+                                    <div id="sparklinedash2"><canvas width="67" height="30"
+                                            style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
+                                    </div>
+                                </li>
+                                <li class="ms-auto"><span class="counter text-white"><h3 id="report"  value="text" >{{ resultCom }}</h3></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="white-box analytics-info" style="background-color: #EC320D;">
+                            <h3 class="box-title" style="color:white;">Incomplete</h3>
+                            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                                <li>
+                                    <div id="sparklinedash3"><canvas width="67" height="30"
+                                            style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
+                                    </div>
+                                </li>
+                                <li class="ms-auto"><span class="counter text-white"><h3 id="report"  value="text" >{{ resultUnCom }}</h3></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- PRODUCTS YEARLY SALES -->
+                <!-- ============================================================== -->
+                <!-- Recent Comments -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- .col -->
+                    <div class="col-md-12 col-lg-12 col-sm-12">
+                        <div class="card white-box p-0" style="background-color: turquiose;">
+                            <div class="card-body">
+                                <h3 class="box-title mb-0">Todo's</h3>
+                            </div>
+                            <form class="ui form" action="" method="post">
+                                <div class="input-group">
+                                  <input type="search" name="title" class="form-control rounded" placeholder="What do you wanna do" aria-label="Search"
+                                    aria-describedby="search-addon" />
+                                  <button type="submit" class="btn btn-outline-primary">Add Todo</button>
+                                </div>
+                            </form>
+                            <div class="comment-widgets">
+                                <!-- Comment Row -->
+                                {% for todo in todo_list %}
+                                <div class="d-flex flex-row comment-row p-3 mt-0">
+                                    <div class="comment-text ps-2 ps-md-3 w-100">
+                                        <span class="font-medium">{{ todo[1] }}</span>
+                                        {% if todo[2] == 0 %}
+                                        <span class="badge bg-secondary rounded fs-2 ms-2 mt-2 mt-md-0">Incomplete</span>
+                                        {% else %}
+                                        <span class="badge bg-success rounded fs-2 ms-2 mt-2 mt-md-0">Complete</span>
+                                        {% endif %}
+                                        <div class="comment-footer d-md-flex align-items-center">
+                                            
+                                            <a class="btn btn-primary  d-md-block pull-left text-white fs-2 mt-2 mt-md-0" href="/update/{{ todo[0] }}" style="padding: 2px; margin: 2px">Complete</a>
+                                            <a class="btn btn-primary  d-md-block pull-left text-white fs-2 mt-2 mt-md-0" href="/incomplete/{{ todo[0] }}" style="padding: 2px; margin: 2px">Incomplete</a>
+                                            <a class="btn btn-danger  d-md-block pull-right text-white fs-2 ms-auto mt-2 mt-md-0" href="/delete/{{ todo[0] }}">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+    </div>
+</div>
+</body>
+
+    
+</html>    

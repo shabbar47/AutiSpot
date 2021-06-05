@@ -1,0 +1,183 @@
+<!--<table border = 1>
+  {% for user in userDetails %}
+  <tr>
+    <td> {{user[0]}} </td>
+    <td> <img src={{user[1]}} alt=""> </td>
+  </tr>
+  {% endfor %}
+</table>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script>
+  /*
+  function aud_play_pause() {
+  var audio = document.getElementById("audio_player");
+  if (audio.paused) {
+    audio.play();
+  } else {
+    audio.pause();
+    audio.currentTime = 0;
+  }
+}
+
+
+  function play(){
+       var audio = document.getElementById("audio_player");
+       console.log("I'm here!");
+       audio.play();
+      
+         }
+  function pauseAudio(){
+        var audio = document.getElementById("audio_player");
+        console.log("I'm here!");
+        audio.pause();
+        audio.currentTime = 0;
+}*/
+//Text to Speech
+function textToAudio() {
+                var message = document.getElementById("text-to-speech").textContent;
+                console.log(message);
+                var speech = new SpeechSynthesisUtterance();
+                speech.lang = "en-US";
+                
+                speech.text = message;
+                speech.volume = 1;
+                speech.rate = 1;
+                speech.pitch = 1;
+                
+                window.speechSynthesis.speak(speech);
+            }
+
+ </script>
+
+ <style>
+   .card:hover{
+    box-shadow: 8px 8px 5px grey;    
+    transform: scale(1.1);
+   }
+ </style>
+</head> 
+<body>
+  <br>
+  <div class="jumbotron">
+  <textarea class="msg" id="text-to-speech" rows="2" cols="100"></textarea> <button onclick="textToAudio()">Speech</button></div>
+  <br><br>
+ <div class="container">
+  <div class="card-deck">
+
+{% for user in userDetails %}
+
+<audio id="audio_player" src="{{url_for('static',filename='')}}{{user[4]}}" type="audio/mpeg" preload="none"></audio>
+  <script>
+  
+//Audio Player
+    function play(music) {
+     
+    var audio = document.getElementById("audio_player");
+    console.log(audio);
+    if (audio.paused) {
+      document.getElementById("audio_player").setAttribute('src', music);
+     // audio.currentSrc = "{{url_for('static',filename='')}}{{user[4]}}"
+    //  audio.src = "{{url_for('static',filename='')}}{{user[4]}}";
+      audio.play();
+      
+    } else {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+   
+  }
+/*
+  function speech_text(id)
+  {
+    var x = document.getElementsByClassName("texts");
+      x[1].innerHTML = "{{user[1]}}";
+  }
+var allButtonsOnPage = document.querySelectorAll('button');
+
+allButtonsOnPage.forEach(function(button,index) {
+  button.addEventListener('click', function () {
+    var x = document.getElementsByClassName("msg");
+    //x[index].innerHTML = "{{user[1]}}";
+    document.querySelector('.msg').innerHTML = "{{user[1]}}";
+    console.log(index);
+  });
+});
+
+*/
+//AUDIO PLAYER
+/*
+ var x = document.getElementsByClassName("hello");
+ for (i of x) {
+  (function(i) {
+ i.addEventListener("click", function() {
+  var audio = document.getElementById("audio_player");
+  if (audio.paused) {
+      audio.play();
+      
+    } else {
+      audio.pause();
+    //  audio.currentTime = 0;
+    }
+});
+  })(i);
+}
+
+
+
+function play(i){
+   var audio = document.getElementById('audio_player');
+   console.log(audio);
+   audio.play('{{user[0]}}');
+             }
+
+*/
+
+//ONCLICK TEXT GENERATION
+console.clear();
+
+var btns = document.getElementsByClassName('text');
+
+for (i of btns) {
+  (function(i) {
+    i.addEventListener('click', function() {
+     document.querySelector('.msg').innerHTML  += i.innerHTML;
+    });
+  })(i);
+}
+  </script>
+
+    <div class="card  mb-3 hello" style="width: 18rem;"  value="PLAY" onclick="play('{{user[5]}}')" >
+      
+      <img class="card-img-top img-fluid" width="400px" src="{{url_for('static',filename='')}}{{user[2]}}"/>
+      <div class="card-body" >
+           <h2 class="card-text" style="text-align: center; font-size:x-large;">{{user[1]}}</h2>
+            <!--<button onclick="play()" class="btn btn-primary" ><i class="fa fa-play" aria-hidden="true"></i></button>-->
+      </div>
+
+     </div>
+     <main>
+     <button type="button" id="on" class="btn btn-dark text" >{{user[1]}}</button>
+     
+     
+    </main>
+     <!-- <button onclick="aud_play_pause()" type="button" class="btn btn-dark"><i class="fa fa-pause" aria-hidden="true"></i></button>-->
+{% endfor %}
+
+
+</div>
+</div>
+
+
+</body>
+</html>
